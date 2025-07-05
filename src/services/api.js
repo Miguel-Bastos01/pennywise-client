@@ -12,4 +12,16 @@ api.interceptors.request.use((config) =>{
     return config
 })
 
+export const getExpenseById = (id) => {
+    return api.get(`/expenses/${id}`)
+}
+
+export const updatedExpense = (id, updatedExpense) =>{
+    return api.put(`/expenses/${id}`, updatedExpense)
+}
+
+export const deletedExpense = (id) => {
+    return api.delete(`/expenses/${id}`)
+}
+
 export default api
