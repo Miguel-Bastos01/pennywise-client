@@ -1,6 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api from "../services/api";
 
 function Signup(){
     const [email, setEmail] = useState("")
@@ -13,9 +13,9 @@ function Signup(){
     const handleSignup = (e) => {
         e.preventDefault()
 
-        axios
-         .post("http://localhost:5005/auth/signup", {email, password, name})
-         .then((res) => {
+        
+         api.post("/auth/signup", {email, password, name})
+         .then(() => {
             navigate("/login")
          })
          .catch((err) => {
