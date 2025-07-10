@@ -25,10 +25,10 @@ function Login() {
     <div
       className="min-h-screen bg-cover bg-center flex flex-col items-center justify-center p-4 border border-red-500"
       style={{
-        backgroundImage: "url('/Login-background.jpg')",
+        backgroundImage: "url('/Login-background.png')",
       }}
     >
-      <h1 className="text-white text-3xl">Login Page</h1>
+      <h1 className="text-black text-3xl">Login Page</h1>
     </div>
   );
 }
