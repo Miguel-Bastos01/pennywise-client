@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
-import { response } from "express";
+
 
 function Login () {
   const [email, setEmail] = useState("")
@@ -20,6 +20,7 @@ function Login () {
       .catch((err) => {
         setError("Incorrect email or password")
       })
+    }
     
   return (
     <div
@@ -30,7 +31,7 @@ function Login () {
     ></div>
   )
 
-  }
+  
 }
 
 export default Login
