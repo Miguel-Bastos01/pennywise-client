@@ -108,7 +108,7 @@ function Dashboard() {
 
       
       <div className="flex justify-between items-center mb-2">
-        <h3 className="text-xl font-bold underline">Expenses</h3>
+        <h3 className="text-black text-xl font-bold underline">Expenses</h3>
         <button
           onClick={() => navigate("/expense-form")}
           className="text-sm text-[#00AEEF] hover:underline"
@@ -119,25 +119,26 @@ function Dashboard() {
 
       <div className="space-y-2 mb-4">
         {expenses.slice(0, 4).map((expense) => (
-          <div key={expense._id || expense.id}>
+            <div key={expense._id || expense.id}>
             <div
-              onClick={() => toggleExpand(expense._id || expense.id)}
-              className="flex justify-between items-center cursor-pointer border-b py-1"
+                onClick={() => toggleExpand(expense._id || expense.id)}
+                className="flex justify-between items-center cursor-pointer border-b py-1"
             >
-              <span>{expense.label}</span>
-              <div className="flex items-center space-x-2">
+                <span>{expense.title}</span>
+                <div className="flex items-center space-x-2">
                 <span>€{expense.amount}</span>
                 <span>{expense.mood}</span>
-              </div>
+                </div>
             </div>
             {expanded === (expense._id || expense.id) && (
-              <div className="text-sm text-gray-700 pl-2 py-1">
-                {expense.details}
-              </div>
+                <div className="text-sm text-gray-700 pl-2 py-1">
+                <p><strong>Category:</strong> {expense.category}</p>
+                {expense.notes && <p><strong>Notes:</strong> {expense.notes}</p>}
+                </div>
             )}
-          </div>
+            </div>
         ))}
-      </div>
+        </div>
 
       
       <div className="text-center">

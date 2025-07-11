@@ -14,17 +14,18 @@ function ExpenseForm(){
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        if (!label || !amount) {
+        if (!title || !amount) {
             seterror (" and amount are required")
             return
         }
     api
-      .post("/expenses", {
-        label,
+    .post("/expenses", {
+        title,
         amount: parseFloat(amount),
         mood,
-        details,
-      })
+        category,
+        notes: details, 
+    })
       .then(() => navigate ("/dashboard"))
       .catch((err) => {
         console.error(err)
