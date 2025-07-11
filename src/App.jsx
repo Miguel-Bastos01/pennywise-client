@@ -6,6 +6,7 @@ import Login from './pages/Login'
 import Home from './pages/Home'
 import Signup from './pages/Signup'
 import Dashboard from './pages/Dashboard'
+import ExpenseForm from './components/ExpenseForm'
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route element={<PrivateRoute/>}>
         {<Route path="/dashboard" element={<Dashboard/>}/> }
+        <Route path="/expense-form" element={<ExpenseForm />} />
 
         {/* <Route path='/expenses' element={<ExpensePage/>} /> */}
         </Route>
