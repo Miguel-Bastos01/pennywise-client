@@ -13,16 +13,17 @@ function ExpensePage() {
   }, []);
 
   const fetchExpenses = () => {
-    api
-      .get("/expenses")
-      .then((res) => setExpenses(res.data))
-      .catch((err) => console.error("Failed to load expenses:", err));
+   api
+  .get("/api/expenses") 
+  .then((res) => setExpenses(res.data))
+  .catch((err) => console.error("Failed to load expenses:", err));
+
   };
 
   const handleDelete = (id) => {
     if (confirm("Are you sure you want to delete this expense?")) {
       api
-        .delete(`/expenses/${id}`)
+        .delete(`/api/expenses/${id}`)
         .then(() => {
           fetchExpenses();
         })

@@ -24,11 +24,13 @@ function Dashboard() {
   }, [filter]);
 
   const fetchExpenses = () => {
-    api
-      .get("/expenses", { params: { filter } })
-      .then((res) => setExpenses(res.data))
-      .catch((err) => console.error("Failed to load expenses:", err));
-  };
+  const params = filter === "this-month" ? { filter } : {};
+
+  api
+    .get("/api/expenses", { params })
+    .then((res) => setExpenses(res.data))
+    .catch((err) => console.error("Failed to load expenses:", err));
+};
 
   const handleSignOut = () => {
     localStorage.clear();

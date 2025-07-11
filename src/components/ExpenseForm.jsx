@@ -12,26 +12,28 @@ function ExpenseForm(){
     const navigate = useNavigate ()
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+  e.preventDefault();
 
-        if (!title || !amount) {
-            seterror (" and amount are required")
-            return
-        }
-    api
-    .post("/expenses", {
-        title,
-        amount: parseFloat(amount),
-        mood,
-        category,
-        notes: details, 
+  if (!title || !amount) {
+    seterror("Title and amount are required");
+    return;
+  }
+
+  api
+    .post("/api/expenses", {
+      title,
+      amount: parseFloat(amount),
+      mood,
+      category,
+      notes: details,
     })
-      .then(() => navigate ("/dashboard"))
-      .catch((err) => {
-        console.error(err)
-        seterror("Failed to create expense")
-      })
-    }
+    .then(() => navigate("/dashboard"))
+    .catch((err) => {
+      console.error(err);
+      seterror("Failed to create expense");
+    });
+};
+
     return (
     <div
       className="min-h-screen flex items-center justify-center bg-cover bg-center px-4"
