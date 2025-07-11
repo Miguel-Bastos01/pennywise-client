@@ -15,7 +15,7 @@ function Login() {
     api.post("/auth/login", { email, password })
       .then((response) => {
         localStorage.setItem("authToken", response.data.authToken);
-        navigate("/home");
+        navigate("/dashboard");
       })
       .catch((err) => {
         setError("Incorrect email or password");
@@ -24,7 +24,7 @@ function Login() {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center flex flex-col items-center justify-center p-4 border border-red-500"
+      className="min-h-screen bg-cover bg-center flex flex-col items-center justify-center p-4 border"
       style={{
         backgroundImage: "url('/Login-background.png')",
       }}>
@@ -80,6 +80,7 @@ function Login() {
             Sign up
           </span>
         </div>
+          <br />
 
           <footer className="text-sm mb-4 text-center">
            Created by Miguel Bastos
