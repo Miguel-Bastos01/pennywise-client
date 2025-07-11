@@ -26,7 +26,7 @@ function Signup(){
       .then((response) => {
         localStorage.setItem("authToken", response.data.authToken);
         localStorage.setItem("userName", name); 
-        navigate("/home");
+        navigate("/dashboard");
       })
       .catch(() => {
         setError("Something went wrong. Please try again.");
@@ -109,7 +109,7 @@ function Signup(){
             Log in
           </span>
         </div>
-        
+
         <br />
         <footer className="text-sm mb-4 text-center">
            Created by Miguel Bastos

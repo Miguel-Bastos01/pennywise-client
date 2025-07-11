@@ -5,7 +5,7 @@ import './App.css'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import Signup from './pages/Signup'
-// import Dashboard from './pages/Dashboard'
+import Dashboard from './pages/Dashboard'
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         {<Route path="/signup" element={<Signup/>}/> }
         <Route path="/login" element={<Login/>}/>
         <Route element={<PrivateRoute/>}>
-        {/* {<Route path="/dashboard" element={<Dashboard/>}/> } */}
+        {<Route path="/dashboard" element={<Dashboard/>}/> }
 
         {/* <Route path='/expenses' element={<ExpensePage/>} /> */}
         </Route>
